@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!-- bootstrap -->
-    <%= render 'shared/bootstrap' %>
+    <%= render 'shared/bootstrap_header' %>
 
     <!-- responsive style -->
     <%= render 'shared/responsive' %>
@@ -22,7 +22,10 @@
 
     <!-- container -->
     <div class="container" id="container">
+      <%= render 'shared/flash' %>
       <%= yield %>
     </div>
+
+    <%= render 'shared/bootstrap_footer' %>
   </body>
 </html>
