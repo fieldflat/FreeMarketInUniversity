@@ -1,7 +1,13 @@
 <div id="navigator">
   <ul class="nav nav-tabs">
-    <li class="nav-item" id="home"><%= link_to "Home", root_path, class: "nav-link" %></li>
-    <li class="nav-item" id="sign_up"><%= link_to "Sign up", signup_path, class: "nav-link" %></li>
-    <li class="nav-item" id="log_in"><%= link_to "Log in", "#", class: "nav-link" %></li>
+    <% if logged_in? %>
+      <li class="nav-item" id="users"><%= link_to "Users", '#', class: "nav-link" %></li>
+      <li class="nav-item" id="my_profile"><%= link_to "MyProfile", user_path(current_user), class: "nav-link" %></li>
+      <li class="nav-item" id="logout"><%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %></li>
+    <% else %>
+      <li class="nav-item" id="home"><%= link_to "Home", root_path, class: "nav-link" %></li>
+      <li class="nav-item" id="sign_up"><%= link_to "Sign up", signup_path, class: "nav-link" %></li>
+      <li class="nav-item" id="log_in"><%= link_to "Log in", login_path, class: "nav-link" %></li>
+    <% end %>
   </ul>
 </div>
