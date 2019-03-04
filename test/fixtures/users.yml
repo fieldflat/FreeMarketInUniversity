@@ -2,3 +2,18 @@ michael:
   name: Michael Example
   email: michael.example@j.mbox.nagoya-u.ac.jp
   password_digest: <%= User.digest('password') %>
+
+archer:
+  name: Sterling Archer
+  email: duchess.archer@j.mbox.nagoya-u.ac.jp
+  password_digest: <%= User.digest('password') %>
+
+lana:
+  name: Lana Kane
+  email: qwe.rty@j.mbox.nagoya-u.ac.jp
+  password_digest: <%= User.digest('password') %>
+
+malory:
+  name: Malory Archer
+  email: qwe.rtqy@j.mbox.nagoya-u.ac.jp
+  password_digest: <%= User.digest('password') %>

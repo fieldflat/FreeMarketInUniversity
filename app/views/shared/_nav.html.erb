@@ -1,8 +1,9 @@
 <div id="navigator">
   <ul class="nav nav-tabs">
     <% if logged_in? %>
-      <li class="nav-item" id="users"><%= link_to "Users", '#', class: "nav-link" %></li>
-      <li class="nav-item" id="my_profile"><%= link_to "MyProfile", user_path(current_user), class: "nav-link" %></li>
+      <li class="nav-item" id="users"><%= link_to "Users", users_path, class: "nav-link" %></li>
+      <li class="nav-item" id="my_profile"><%= link_to "Profile", user_path(current_user), class: "nav-link" %></li>
+      <li class="nav-item" id="edit"><%= link_to "Edit", edit_user_path(current_user), class: "nav-link" %></li>
       <li class="nav-item" id="logout"><%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %></li>
     <% else %>
       <li class="nav-item" id="home"><%= link_to "Home", root_path, class: "nav-link" %></li>
