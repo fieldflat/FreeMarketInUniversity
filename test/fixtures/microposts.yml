@@ -1,0 +1,20 @@
+post_1:
+  title: book
+  content: story of animal
+  purchased: false
+  user: michael
+  updated_at: <%= 10.minutes.ago %>
+
+post_2:
+  title: ring
+  content: ring my sister gave
+  purchased: false
+  user: michael
+  updated_at: <%= 2.hours.ago %>
+
+most_recent:
+  title: souvenia
+  content: souvenia my sister gave
+  purchased: false
+  user: michael
+  updated_at: <%= Time.zone.now %>
