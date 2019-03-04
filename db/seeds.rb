@@ -15,3 +15,10 @@ User.create!(name: "Tomonori HIRATA", email: "hirata.tomonori@j.mbox.nagoya-u.ac
                password: "foobar",
                password_confirmation: "foobar")
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  title = (0...25).map{ (65 + rand(26)).chr }.join.downcase
+  content = (0...50).map{ (65 + rand(26)).chr }.join.downcase
+  users.each { |user| user.microposts.create!(title: title, content: content) }
+end

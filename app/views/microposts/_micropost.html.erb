@@ -1,0 +1,8 @@
+<li id="micropost-<%= micropost.id %>">
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <h2 class="content"><%= micropost.title %></h2>
+  <h3 class="content"><%= micropost.content %></h3>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.updated_at) %> ago.
+  </span>
+</li>
