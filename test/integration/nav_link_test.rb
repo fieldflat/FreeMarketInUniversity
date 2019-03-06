@@ -16,6 +16,7 @@ class NavLinkTest < ActionDispatch::IntegrationTest
     user = users(:michael)
     log_in_as(user)
     get root_path
+    assert_select '#navigator .nav-item a[href=?]', root_path, text: 'Home'
     assert_select '#navigator .nav-item a[href=?]', users_path, text: 'Users'
     assert_select '#navigator .nav-item a[href=?]', user_path(user), text: 'Profile'
     assert_select '#navigator .nav-item a[href=?]', edit_user_path(user), text: 'Edit'

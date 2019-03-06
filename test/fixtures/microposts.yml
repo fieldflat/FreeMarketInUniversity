@@ -1,6 +1,7 @@
 post_1:
   title: book
   content: story of animal
+  price: "200円"
   purchased: false
   user: michael
   updated_at: <%= 10.minutes.ago %>
@@ -8,6 +9,7 @@ post_1:
 post_2:
   title: ring
   content: ring my sister gave
+  price: "200円"
   purchased: false
   user: michael
   updated_at: <%= 2.hours.ago %>
@@ -15,6 +17,41 @@ post_2:
 most_recent:
   title: souvenia
   content: souvenia my sister gave
+  price: "200円"
   purchased: false
   user: michael
   updated_at: <%= Time.zone.now %>
+
+ants:
+  title: book
+  content: story of animal
+  price: "200円"
+  purchased: false
+  user: archer
+  updated_at: <%= 10.minutes.ago %>
+
+zone:
+  title: book
+  content: story of animal
+  price: "200円"
+  purchased: false
+  user: archer
+  updated_at: <%= 10.minutes.ago %>
+
+
+tone:
+  title: book
+  content: story of animal
+  price: "200円"
+  purchased: false
+  user: lana
+  updated_at: <%= 10.minutes.ago %>
+
+
+van:
+  title: book
+  content: story of animal
+  price: "200円"
+  purchased: false
+  user: lana
+  updated_at: <%= 10.minutes.ago %>

@@ -4,4 +4,5 @@ class Micropost < ApplicationRecord
   validates :content, presence: true, length: {maximum: 200}
   validates :user_id, presence: true
   default_scope -> {order(updated_at: :desc)}
+  validates :price, presence: true
 end

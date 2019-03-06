@@ -1,5 +1,5 @@
-<% provide(:title, 'Post') %>
-<h1>Post</h1>
+<% provide(:title, 'Edit') %>
+<h1>Edit</h1>
 
 <%= form_for(@micropost) do |f| %>
 
@@ -14,6 +14,6 @@
   <%= f.label :price %>
   <%= f.text_field :price, class: "form-control" %>
 
-  <%= f.submit "出品する", class: "btn btn-primary" %>
+  <%= f.submit "編集する", class: "btn btn-primary" %>
 
 <% end %>

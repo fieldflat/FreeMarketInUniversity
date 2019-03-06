@@ -71,7 +71,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "associated microposts should be destroyed" do
     @user.save
-    @user.microposts.create!(title: "example title", content: "Lorem ipsum")
+    @user.microposts.create!(title: "example title", content: "Lorem ipsum", price: "300円")
     assert_difference 'Micropost.count', -1 do
       @user.destroy
     end
