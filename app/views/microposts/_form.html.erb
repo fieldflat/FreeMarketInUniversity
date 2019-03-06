@@ -1,0 +1,16 @@
+<%= form_for(@micropost) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control", :size => "20x10" %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price, class: "form-control" %>
+
+  <%= f.submit yield(:btn_message), class: "btn btn-primary" %>
+
+<% end %>
