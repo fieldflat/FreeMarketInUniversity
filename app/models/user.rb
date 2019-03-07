@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :favorites, dependent: :destroy
   has_many :microposts, dependent: :destroy
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
@@ -40,6 +41,10 @@ class User < ApplicationRecord
   def feed
     #Micropost.where("user_id = ?", id)
     Micropost.all
+  end
+
+  def favorited?(micropost)
+    !self.favorites.find_by(micropost_id: micropost.id).nil?
   end
 
 end

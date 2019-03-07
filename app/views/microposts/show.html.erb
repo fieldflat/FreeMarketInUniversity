@@ -13,3 +13,16 @@
     <%= link_to "Buy!", '#', class: "btn-sm btn-primary", data: {confirm: "You buy #{@micropost.title}. Sure?"}%>
   <% end %>
 </p>
+
+<div>
+  <% if current_user.favorited?(@micropost) %>
+    <%= link_to favorite_path(Favorite.find_by(user_id: current_user.id, micropost_id: @micropost.id)), method: :delete do %>
+      <i class="fas fa-heart favorited"></i>
+    <% end %>
+  <% else %>
+    <%= link_to favorites_path(micropost_id: @micropost.id), method: :post do %>
+      <i class="far fa-heart"></i>
+    <% end %>
+  <% end %>
+  <span><%= @micropost.favorites.count %></span>
+</div>
