@@ -10,7 +10,6 @@ class UsersDestroyTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get user_path(@user)
     assert_template 'users/show'
-    assert_select 'a[href=?]', user_path(@user), text: "Delete my account"
     delete user_path(@user)
     assert_redirected_to root_url
     follow_redirect!

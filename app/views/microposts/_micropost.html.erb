@@ -4,4 +4,10 @@
   <span class=" micropost_timestamp_style">
     Posted <%= time_ago_in_words(micropost.updated_at) %> ago.
   </span>
+  <div>
+  <%= link_to '#', method: :post do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+  <span>0</span>
+  </div>
 </li>
