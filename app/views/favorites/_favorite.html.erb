@@ -1,0 +1,5 @@
+<%= form_for(:favorite, url: favorites_path(micropost_id: micropost.id), html: {method: :post}) do |f| %>
+  <%= button_tag(type: "submit") do %>
+    <i class="far fa-heart"></i><span><%= micropost.favorites.count %></span>
+  <% end %>
+<% end %>
