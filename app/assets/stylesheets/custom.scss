@@ -58,3 +58,70 @@
     border-bottom: 1px solid #555;
   }
 }
+
+/*
+  postにおけるlist-styleの無効化
+*/
+.no_list_style {
+  list-style: none;
+}
+
+/*
+  individual microposts css style
+*/
+.micropost_whole_style {
+  border: 1px solid rgb(223, 223, 223);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.micropost_title_style {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.micropost_price_style {
+  font-size: 14px;
+  color: rgb(162, 162, 162);
+}
+
+.micropost_timestamp_style {
+  font-size: 14px;
+  color: rgb(128, 128, 128);
+}
+
+.micropost_btn_style {
+  margin-top: 14px;
+}
+
+/*
+  detailed microposts css style
+*/
+
+.show_content {
+  width: 80%;
+  font-size: 14px;
+  color: rgb(164, 164, 164);
+  margin: 0 auto;
+}
+
+.show_price_style {
+  padding: 10px 0;
+  width: 80%;
+  font-size: 14px;
+  color: rgb(128, 128, 128);
+  margin: 0 auto;
+}
+
+.show_timestamp_style {
+  width: 80%;
+  font-size: 14px;
+  color: rgb(128, 128, 128);
+  margin: 0 auto;
+}
+
+.show_btn_style {
+  padding: 10px 0;
+  margin-top: 12px;
+  margin: 0 auto;
+}

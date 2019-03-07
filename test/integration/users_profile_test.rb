@@ -15,7 +15,6 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_match @user.name, response.body
     assert_match @user.microposts.count.to_s, response.body
     @user.microposts.paginate(page: 1).each do |micropost|
-      assert_match micropost.content, response.body
       assert_match micropost.title, response.body
     end
   end

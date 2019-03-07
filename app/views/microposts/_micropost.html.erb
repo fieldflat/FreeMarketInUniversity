@@ -1,15 +1,7 @@
-<li id="micropost-<%= micropost.id %>">
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <h2 class="content"><%= micropost.title %></h2>
-  <h3 class="content"><%= micropost.content %></h3>
-  <p class="content"><%= micropost.price %></p>
-  <span class="timestamp">
+<li id="micropost-<%= micropost.id %>" class="col-sm-4 micropost_whole_style">
+  <h2 class="micropost_title_style"><%= link_to micropost.title, micropost %></h2>
+  <p class="micropost_price_style"><%= micropost.price %></p>
+  <span class=" micropost_timestamp_style">
     Posted <%= time_ago_in_words(micropost.updated_at) %> ago.
   </span>
-  <p>
-    <% if current_user?(micropost.user) %>
-      <%= link_to "Edit", edit_micropost_path(micropost), class: "btn-sm btn-success" %>
-      <%= link_to "Delete", micropost_path(micropost), method: :delete, data: {confirm: "You sure?"}, class:"btn-sm btn-danger" %>
-    <% end %>
-  </p>
 </li>

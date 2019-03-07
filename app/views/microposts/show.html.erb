@@ -1,0 +1,15 @@
+<h1 class="text-center"><%= @micropost.title %></h1>
+<p class="text-center show_content"><%= @micropost.content %></p>
+<p class="text-center show_price_style"><%= @micropost.price %></p>
+<p class="text-center show_timestamp_style">
+  Posted <%= time_ago_in_words(@micropost.updated_at) %> ago.
+</p>
+
+<p class="text-center show_btn_style">
+  <% if current_user?(@micropost.user) %>
+    <%= link_to "Edit", edit_micropost_path(@micropost), class: "btn-sm btn-success" %>
+    <%= link_to "Delete", micropost_path(@micropost), method: :delete, data: {confirm: "You sure?"}, class:"btn-sm btn-danger" %>
+  <% else %>
+    <%= link_to "Buy!", '#', class: "btn-sm btn-primary", data: {confirm: "You buy #{@micropost.title}. Sure?"}%>
+  <% end %>
+</p>

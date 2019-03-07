@@ -1,9 +1,13 @@
 class MicropostsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :edit, :create, :destroy, :update]
+  before_action :logged_in_user, only: [:new, :show, :edit, :create, :destroy, :update]
   before_action :correct_user, only: [:edit, :destroy, :update]
 
   def new
     @micropost = current_user.microposts.build
+  end
+
+  def show
+    @micropost = Micropost.find(params[:id])
   end
 
   def create
@@ -29,7 +33,7 @@ class MicropostsController < ApplicationController
   def update
     if @micropost.update_attributes(microposts_params)
       flash[:success] = "編集しました！"
-      redirect_to current_user
+      redirect_to @micropost
     else
       render 'edit'
     end

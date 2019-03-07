@@ -1,25 +1,32 @@
 <% provide(:title, "Home") %>
 
+<!--
+ログインしている場合のホームビュー
+-->
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
-    </div>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= render 'shared/user_info' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= render 'shared/feed' %>
   </div>
+</div>
+
+<!--
+ログインしていない場合のホームビュー
+-->
 <% else %>
-
-<h1>This is Home View</h1>
-
-<p>Welcome to Free Market in University!!</p>
-<p>Please sign up or log in.</p>
-
-<p><%= link_to "Sign up", signup_path, class: "btn btn-primary" %></p>
-<p><%= link_to "Log in", login_path, class: "btn btn-primary" %></p>
-
+<div class="row text-center">
+  <div class="col-sm-6">
+    <p>新規登録される方はコチラをクリック</p>
+    <p><%= link_to "Sign up", signup_path, class: "btn btn-primary" %></p>
+  </div>
+  <div class="col-sm-6">
+    <p>ログインされる方はコチラをクリック</p>
+    <p><%= link_to "Log in", login_path, class: "btn btn-success" %></p>
+  </div>
+</div>
 <% end %>
