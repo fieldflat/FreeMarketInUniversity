@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
+  has_many :fav_microposts, through: :favorites, source: :micropost
   has_many :microposts, dependent: :destroy
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
