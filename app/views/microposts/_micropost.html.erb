@@ -1,5 +1,6 @@
-<li id="micropost-<%= micropost.id %>" class="col-sm-4 micropost_whole_style">
+<li id="micropost-<%= micropost.id %>" class="col-sm-4 micropost_whole_style text-center">
   <h2 class="micropost_title_style"><%= link_to micropost.title, micropost %></h2>
+  <%= image_tag(micropost.picture.url, width: '220px') if micropost.picture? %>
   <p class="micropost_price_style"><%= micropost.price %></p>
   <span class=" micropost_timestamp_style">
     Posted <%= time_ago_in_words(micropost.updated_at) %> ago.

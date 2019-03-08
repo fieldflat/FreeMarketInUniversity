@@ -1,11 +1,13 @@
-<h1 class="text-center"><%= @micropost.title %></h1>
-<p class="text-center show_content"><%= @micropost.content %></p>
-<p class="text-center show_price_style"><%= @micropost.price %></p>
-<p class="text-center show_timestamp_style">
+<div class="text-center">
+<h1><%= @micropost.title %></h1>
+<p class="show_content"><%= @micropost.content %></p>
+<%= image_tag(@micropost.picture.url) if @micropost.picture? %>
+<p class="show_price_style"><%= @micropost.price %></p>
+<p class="show_timestamp_style">
   Posted <%= time_ago_in_words(@micropost.updated_at) %> ago.
 </p>
 
-<p class="text-center show_btn_style">
+<p class="show_btn_style">
   <% if current_user?(@micropost.user) %>
     <%= link_to "Edit", edit_micropost_path(@micropost), class: "btn-sm btn-success" %>
     <%= link_to "Delete", micropost_path(@micropost), method: :delete, data: {confirm: "You sure?"}, class:"btn-sm btn-danger" %>
@@ -14,10 +16,12 @@
   <% end %>
 </p>
 
-<div class="text-center">
+<div>
   <% if current_user.favorited?(@micropost) %>
     <%= render 'favorites/unfavorited', micropost: @micropost %>
   <% else %>
     <%= render 'favorites/favorite', micropost: @micropost %>
   <% end %>
+</div>
+
 </div>
