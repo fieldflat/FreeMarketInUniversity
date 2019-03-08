@@ -3,7 +3,14 @@
 <div class="row">
   <aside class="col-md-4">
     <h1>Name</h1>
-    <%= @user.name %>
+    <p><%= @user.name %></p>
+
+    <% if @user.user_image? %>
+      <%= image_tag(@user.user_image.url, width: '150px') if @user.user_image? %>
+    <% else %>
+      <%= image_tag(@user.user_image.url, width: '150px') %>
+    <% end %>
+
   </aside>
 
   <div class="col-md-8">
@@ -15,6 +22,8 @@
           </div>
         </ol>
       <%= paginate @microposts %>
+    <% else %>
+    <h2 class="text-center">まだ出品物がありません</h2>
     <% end %>
   </div>
 </div>

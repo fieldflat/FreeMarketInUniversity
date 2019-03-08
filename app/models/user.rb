@@ -8,6 +8,8 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z]+(.mbox.nagoya-u.ac.jp)\z/i
   validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+  mount_uploader :user_image, UserImageUploader
+  validate  :picture_size
 
   has_secure_password
 
@@ -47,5 +49,15 @@ class User < ApplicationRecord
   def favorited?(micropost)
     !self.favorites.find_by(micropost_id: micropost.id).nil?
   end
+
+  private
+
+    # アップロードされた画像のサイズをバリデーションする
+    def picture_size
+      if user_image.size > 5.megabytes
+        errors.add(:picture, "should be less than 5MB")
+      end
+    end
+
 
 end
