@@ -6,6 +6,9 @@
 <p class="show_timestamp_style">
   Posted <%= time_ago_in_words(@micropost.updated_at) %> ago.
 </p>
+<p class="show_user_name">
+  出品者：<%= @micropost.user.name %>
+</p>
 
 <p class="show_btn_style">
   <% if current_user?(@micropost.user) %>
