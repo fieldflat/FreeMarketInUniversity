@@ -1,15 +1,16 @@
-<li id="micropost-<%= micropost.id %>" class="col-sm-4 micropost_whole_style text-center">
+<li id="micropost-<%= micropost.id %>" class="col-sm-4 micropost_whole_style text-center" style="position: relative;">
   <h2 class="micropost_title_style"><%= link_to micropost.title, micropost %></h2>
   <%= image_tag(micropost.picture.url, width: '220px') if micropost.picture? %>
   <p class="micropost_price_style"><%= micropost.price %></p>
-  <span class=" micropost_timestamp_style">
+
+  <p class=" micropost_timestamp_style py-3">
     Posted <%= time_ago_in_words(micropost.updated_at) %> ago.
-  </span>
-  <div>
+  </p>
+  <div style="position: absolute; bottom: 5px; padding-top: 30px;">
     <% if current_user.favorited?(micropost) %>
-      <%= render 'favorites/unfavorited', micropost: micropost %>
+    <%= render 'favorites/unfavorited', micropost: micropost %>
     <% else %>
-      <%= render 'favorites/favorite', micropost: micropost %>
+    <%= render 'favorites/favorite', micropost: micropost %>
     <% end %>
   </div>
 </li>
