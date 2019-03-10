@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20190310054839) do
     t.integer "micropost_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["buyer_id"], name: "index_rooms_on_buyer_id"
     t.index ["micropost_id"], name: "index_rooms_on_micropost_id"
   end
 
