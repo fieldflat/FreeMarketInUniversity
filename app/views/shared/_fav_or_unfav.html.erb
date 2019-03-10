@@ -1,0 +1,5 @@
+<% if current_user.favorited?(@micropost) %>
+  <%= render 'favorites/unfavorited', micropost: @micropost %>
+<% else %>
+  <%= render 'favorites/favorite', micropost: @micropost %>
+<% end %>

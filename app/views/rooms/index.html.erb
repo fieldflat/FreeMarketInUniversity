@@ -1,0 +1,7 @@
+<% if @rooms.any? %>
+  <% @rooms.each do |room| %>
+    <p> 商品名：<%= link_to room.micropost.title, room.micropost %></p>
+  <% end %>
+<% else %>
+<h1>まだ作成中です</h1>
+<% end %>

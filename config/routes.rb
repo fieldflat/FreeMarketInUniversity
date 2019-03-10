@@ -19,4 +19,7 @@ Rails.application.routes.draw do
 
   # favorites
   resources :favorites,           only: [:index, :create, :destroy]
+
+  # rooms
+  resources :rooms,               only: [:index, :show, :create, :destroy]
 end

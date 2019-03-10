@@ -1,0 +1,10 @@
+<% if Room.find_by(micropost_id: @micropost.id).nil? %>
+  <% if current_user?(@micropost.user) %>
+    <%= link_to "Edit", edit_micropost_path(@micropost), class: "btn btn-success" %>
+    <%= link_to "Delete", micropost_path(@micropost), method: :delete, data: {confirm: "You sure?"}, class:"btn btn-danger" %>
+  <% else %>
+    <%= link_to "Buy!", rooms_path(micropost_id: @micropost.id), class: "btn btn-primary", method: :post, data: {confirm: "You buy #{@micropost.title}. Sure?"}%>
+  <% end %>
+<% else %>
+  <%= link_to "取引中です", '#', class: "btn btn-secondary disabled" %>
+<% end %>

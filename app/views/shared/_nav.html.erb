@@ -13,6 +13,7 @@
         <li class="nav-item" id="edit"><%= link_to "Edit", edit_user_path(current_user), class: "nav-link" %></li>
         <li class="nav-item" id="new"><%= link_to "New", new_micropost_path, class: "nav-link" %></li>
         <li class="nav-item" id="favorite"><%= link_to "Favorite", favorites_path, class: "nav-link" %></li>
+        <li class="nav-item" id="room"><%= link_to "Room", rooms_path, class: "nav-link" %></li>
         <li class="nav-item" id="logout"><%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %></li>
       <% else %>
         <li class="nav-item" id="home"><%= link_to "Home", root_path, class: "nav-link" %></li>

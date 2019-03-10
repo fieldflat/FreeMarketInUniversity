@@ -11,20 +11,11 @@
 </p>
 
 <p class="show_btn_style">
-  <% if current_user?(@micropost.user) %>
-    <%= link_to "Edit", edit_micropost_path(@micropost), class: "btn btn-success" %>
-    <%= link_to "Delete", micropost_path(@micropost), method: :delete, data: {confirm: "You sure?"}, class:"btn btn-danger" %>
-  <% else %>
-    <%= link_to "Buy!", '#', class: "btn btn-primary", data: {confirm: "You buy #{@micropost.title}. Sure?"}%>
-  <% end %>
+  <%= render 'shared/trade' %>
 </p>
 
 <div>
-  <% if current_user.favorited?(@micropost) %>
-    <%= render 'favorites/unfavorited', micropost: @micropost %>
-  <% else %>
-    <%= render 'favorites/favorite', micropost: @micropost %>
-  <% end %>
+  <%= render 'shared/fav_or_unfav' %>
 </div>
 
 </div>
