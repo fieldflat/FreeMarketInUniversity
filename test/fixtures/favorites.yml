@@ -1,9 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  user: one
-  micropost: one
+  user: michael
+  micropost: most_recent
 
 two:
-  user: two
-  micropost: two
+  user: michael
+  micropost: post_2
+
+three:
+  user: michael
+  micropost: zone
+
+four:
+  user: archer
+  micropost: post_1
+
+five:
+  user: archer
+  micropost: post_2
+
+six:
+  user: archer
+  micropost: ants
