@@ -1,7 +1,8 @@
 class RoomsController < ApplicationController
 
   def index
-    @rooms = Room.where(buyer_id: current_user.id)
+    # @rooms = Room.where(buyer_id: current_user.id)
+    @rooms = current_user.my_room
   end
 
   def show

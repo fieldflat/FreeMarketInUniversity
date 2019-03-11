@@ -50,6 +50,11 @@ class User < ApplicationRecord
     !self.favorites.find_by(micropost_id: micropost.id).nil?
   end
 
+  def my_room
+    micropost_ids = "SELECT id FROM microposts WHERE user_id = :current_user_id"
+    Room.where("buyer_id = :current_user_id OR micropost_id IN (#{micropost_ids})", current_user_id: id)
+  end
+
   private
 
     # アップロードされた画像のサイズをバリデーションする
