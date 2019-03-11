@@ -22,4 +22,7 @@ Rails.application.routes.draw do
 
   # rooms
   resources :rooms,               only: [:index, :show, :create, :destroy]
+
+  # messages
+  resources :messages,            only: [:create]
 end

@@ -6,6 +6,8 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @message = Message.new(from_id: current_user.id, to_id:@room.micropost.user)
+    @messages = Message.where(room_id: @room.id)
   end
 
   def create
