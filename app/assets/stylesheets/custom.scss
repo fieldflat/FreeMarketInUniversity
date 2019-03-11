@@ -140,3 +140,21 @@
 .favorited {
   color: red;
 }
+
+/*
+  message css
+*/
+
+#from {
+  background-color: rgb(4, 189, 0);
+  float: right;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#to {
+  background-color: rgb(159, 157, 159);
+  float: left;
+  padding: 5px 10px;
+  border-radius: 10px;
+}

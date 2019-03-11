@@ -1,5 +1,6 @@
 <div class="text-center">
   <h1>Room id <%= @room.id %>の取引画面</h1>
+</div>
 
   <% if @messages.any? %>
     <%= render @messages %>
@@ -22,4 +23,3 @@
     <%= f.submit '送信', class: 'btn btn-primary my-3' %>
 
   <% end %>
-</div>
