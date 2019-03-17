@@ -6,6 +6,9 @@ class EvaluationsController < ApplicationController
   def create
     @evaluation = Evaluation.new(evaluation_params)
     if @evaluation.save
+      if Evaluation.where(micropost_id: @evaluation.micropost.id).count == 2
+        Room.find_by(micropost_id: @evaluation.micropost.id).destroy
+      end
       flash[:success] = "評価をしました！"
       redirect_to root_url
     else

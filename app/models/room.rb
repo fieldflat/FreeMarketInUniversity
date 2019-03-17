@@ -1,3 +1,3 @@
 class Room < ApplicationRecord
-  belongs_to :micropost
+  belongs_to :micropost, dependent: :destroy
 end
