@@ -1,5 +1,10 @@
 <div class="text-center">
   <h1>Room id <%= @room.id %>の取引画面</h1>
+  <% if Evaluation.find_by(buyer_id:current_user.id, micropost_id:@room.micropost.id).nil? %>
+    <%= link_to "評価画面へ", new_evaluation_path(buyer_id:current_user.id, micropost_id:@room.micropost.id), class: "btn btn-primary" %>
+  <% else %>
+    <p>相手の評価待ちです</p>
+  <% end %>
 </div>
 
   <% if @messages.any? %>

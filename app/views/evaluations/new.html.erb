@@ -1,2 +1,15 @@
-<h1>Evaluations#new</h1>
-<p>Find me in app/views/evaluations/new.html.erb</p>
+<%= form_for(@evaluation) do |f| %>
+
+  <p><%= "buyer_id: #{@evaluation.buyer_id}" %></p>
+  <p><%= "micropost_id: #{@evaluation.micropost_id}" %></p>
+
+  <%= f.hidden_field :buyer_id, value: @evaluation.buyer_id %>
+  <%= f.hidden_field :micropost_id, value: @evaluation.micropost_id %>
+
+  <p><%= f.select :value, [["いいね!", 1], ["問題なし", 2], ["少し不満", 3], ["不満", 4]] %></p>
+
+  <%= f.text_area :comment, class: "form-control", :size => "20x10" %>
+
+  <%= f.submit "評価を送信", class: "btn btn-success" %>
+
+<% end %>

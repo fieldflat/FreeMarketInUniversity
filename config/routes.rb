@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'evaluations/new'
-
   # home
   root 'static_pages#home'
 
@@ -27,4 +25,7 @@ Rails.application.routes.draw do
 
   # messages
   resources :messages,            only: [:create]
+
+  #
+  resources :evaluations,         only: [:index, :new, :create]
 end

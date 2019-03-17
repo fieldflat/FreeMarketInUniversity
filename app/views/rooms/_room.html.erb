@@ -1,1 +1,11 @@
-<p> 商品名：<%= link_to room.micropost.title, room.micropost %>   <span><%= link_to '取引画面', room_path(room), class: "btn btn-success" %></span></p>
+<% if Evaluation.find_by(buyer_id: current_user.id, micropost_id: room.micropost.id).nil? %>
+  <p> 商品名：<%= link_to room.micropost.title, room.micropost %>
+    <span><%= link_to '取引画面', room_path(room), class: "btn btn-success" %></span>
+  </p>
+<% else %>
+  <% if Evaluation.where(micropost_id: room.micropost.id).count != 2 %>
+    <p> 商品名：<%= link_to room.micropost.title, room.micropost %>
+      <span>相手の評価待ちです</span>
+    </p>
+  <% end %>
+<% end %>
