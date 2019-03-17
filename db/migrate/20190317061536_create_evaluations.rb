@@ -8,6 +8,5 @@ class CreateEvaluations < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :evaluations, [:buyer_id, :micropost], unique: true
   end
 end

@@ -55,6 +55,10 @@ class User < ApplicationRecord
     Room.where("buyer_id = :current_user_id OR micropost_id IN (#{micropost_ids})", current_user_id: id)
   end
 
+  def evaluations
+    Evaluation.where("to_id = :current_user_id", current_user_id: id)
+  end
+
   private
 
     # アップロードされた画像のサイズをバリデーションする

@@ -1,6 +1,6 @@
 class EvaluationsController < ApplicationController
   def new
-    @evaluation = Evaluation.new(buyer_id: params[:buyer_id], micropost_id: params[:micropost_id])
+    @evaluation = Evaluation.new(from_id: current_user.id, to_id: params[:to_id], micropost_id: params[:micropost_id])
   end
 
   def create
@@ -15,8 +15,9 @@ class EvaluationsController < ApplicationController
   end
 
   private
+
     def evaluation_params
-      params.require(:evaluation).permit(:buyer_id, :micropost_id, :value, :comment)
+      params.require(:evaluation).permit(:from_id, :to_id, :micropost_id, :value, :comment)
     end
 
 end

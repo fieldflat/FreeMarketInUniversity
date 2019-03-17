@@ -11,6 +11,11 @@
       <%= image_tag(@user.user_image.url, width: '150px') %>
     <% end %>
 
+    <p>いいね：<%= @evaluations.where(value: 1).count %></p>
+    <p>問題なし：<%= @evaluations.where(value: 2).count %></p>
+    <p>少し不満：<%= @evaluations.where(value: 3).count %></p>
+    <p>不満：<%= @evaluations.where(value: 4).count %></p>
+
   </aside>
 
   <div class="col-md-8">
