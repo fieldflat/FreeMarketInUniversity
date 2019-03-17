@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  buyer_id: 1
+  micropost: one
+  value: 1
+  comment: MyText
+
+two:
+  buyer_id: 1
+  micropost: two
+  value: 1
+  comment: MyText
