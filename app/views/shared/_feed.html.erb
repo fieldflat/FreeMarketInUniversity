@@ -1,4 +1,7 @@
 <% if @feed_items.any? %>
+  <% if current_user.my_room.count != 0 %>
+    <h3 style="color: red;">取引中の商品があります！チェックしてください！</h3>
+  <% end %>
   <ol class="microposts no_list_style" style="padding: 10px;">
     <div class="row">
       <%= render @feed_items %>

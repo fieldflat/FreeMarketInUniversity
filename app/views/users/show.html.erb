@@ -19,6 +19,9 @@
   </aside>
 
   <div class="col-md-8">
+    <% if current_user.my_room.count != 0 %>
+      <h3 style="color: red;">取引中の商品があります！チェックしてください！</h3>
+    <% end %>
     <% if @user.microposts.any? %>
       <h3 class="text-center">あなたの出品物 (<%= @user.microposts.count %>)</h3>
         <ol class="no_list_style" style="padding: 10px;">
