@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190311071857) do
+ActiveRecord::Schema.define(version: 20190317061536) do
+
+  create_table "evaluations", force: :cascade do |t|
+    t.integer "buyer_id"
+    t.integer "micropost_id"
+    t.integer "value"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id", nil], name: "index_evaluations_on_buyer_id_and_micropost", unique: true
+    t.index ["micropost_id"], name: "index_evaluations_on_micropost_id"
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
