@@ -1,5 +1,5 @@
 <%= form_with(model: Favorite.new, url: favorite_path(Favorite.find_by(user_id: current_user.id, micropost_id: micropost.id)), method: :delete) do |f| %>
   <%= button_tag(type: "submit") do %>
-    <i class="fas fa-heart favorited"></i><span id="favorite_count"><%= micropost.favorites.count %></span>
+    <i class="fas fa-heart favorited" id="favorite_judge_<%= micropost.id %>"></i><span id="favorite_count_<%= micropost.id %>"><%= micropost.favorites.count %></span>
   <% end %>
 <% end %>

@@ -1,1 +1,4 @@
-$("#favorite_count").html('<%= micropost.favorites.count %>');
+var count = $("#favorite_count_<%= @favorite.micropost.id %>").text();
+$("#favorite_count_<%= @favorite.micropost.id %>").html(parseInt(count, 10) - 1);
+console.log("これも！！")
+$("#favorite_judge_<%= @favorite.micropost.id %>").toggleClass("favorited");
