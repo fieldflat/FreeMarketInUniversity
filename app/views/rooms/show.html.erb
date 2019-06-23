@@ -12,14 +12,16 @@
   <% end %>
 </div>
 
-  <% if @messages.any? %>
-    <%= render @messages %>
-  <% end %>
+  <div class="message">
+    <% if @messages.any? %>
+      <%= render @messages %>
+    <% end %>
+  </div>
 
   <%= form_for(@message) do |f| %>
 
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'form-control', :size => "20x10" %>
+    <%= f.text_area :content, remote: true, class: 'form-control js-form__text-field', :size => "20x10" %>
 
     <%= f.hidden_field :room_id, value: @room.id %>
     <%= f.hidden_field :from_id, value: current_user.id %>
@@ -30,6 +32,6 @@
       <%= f.hidden_field :to_id, value: @room.buyer_id%>
     <% end %>
 
-    <%= f.submit '送信', class: 'btn btn-primary my-3' %>
+    <%= f.submit '送信', class: 'btn btn-primary my-3 submit_btn' %>
 
   <% end %>

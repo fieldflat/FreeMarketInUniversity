@@ -1,4 +1,4 @@
-<li id="message-<%= message.id %>" style="list-style: none; padding-bottom: 10px;" >
+<li id="message-<%= message.id %>" style="list-style: none; padding-bottom: 10px;" class="messages" data-id="<%= message.id %>">
   <% if current_user.id == message.from_id %>
     <div style="margin: 0 0 0 auto;  width: 80%;">
       <div style=" width: 100%; margin: 0 0 0 auto; overflow: hidden;">
