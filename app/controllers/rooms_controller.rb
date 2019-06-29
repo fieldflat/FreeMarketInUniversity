@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
     @messages = Message.where(room_id: @room.id)
     respond_to do |format|
       format.html # html形式でアクセスがあった場合は特に何もなし(@messages = Message.allして終わり）
-      format.json { @new_message = @messages.where('id > ?', params[:message][:id]) } # json形式でアクセスがあった場合は、params[:message][:id]よりも大きいidがないかMessageから検索して、@new_messageに代入する
+      format.json { @new_message = Message.where('id > ? and room_id = ? and to_id = ?', params[:message][:id], @room.id, current_user.id) } # json形式でアクセスがあった場合は、params[:message][:id]よりも大きいidがないかMessageから検索して、@new_messageに代入する
     end
   end
 
