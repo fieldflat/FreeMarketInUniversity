@@ -1,27 +1,25 @@
-$(document).on('turbolinks:load', function () {
-    pattern = 'rooms';
-    url = location.href;
-    if (url.indexOf(pattern) != -1) {
-        var timer1;
-        function buildMESSAGE(message) {
-            if (message.content !== undefined){
-                var content = `<li id="message-${message.id}" style="list-style: none; padding-bottom: 10px;" class="messages" data-id="${message.id}"><div class="text-left" style="width: 80%;"><div style=" width: 100%;  overflow: hidden;"><span class="image" id="to">${message.content}</span></div></div> </li>`
-                $('.message').append(content);
-                return content;
+pattern = 'rooms';
+url = location.href;
+if (url.indexOf(pattern) != -1) {
+    $(document).on('turbolinks:load', function () {
+
+            var timer1;
+            function buildMESSAGE(message) {
+                if (message.content !== undefined){
+                    var content = `<li id="message-${message.id}" style="list-style: none; padding-bottom: 10px;" class="messages" data-id="${message.id}"><div class="text-left" style="width: 80%;"><div style=" width: 100%;  overflow: hidden;"><span class="image" id="to">${message.content}</span></div></div> </li>`
+                    $('.message').append(content);
+                    return content;
+                }
             }
-        }
 
-        $(function () {
-            timer1  = setInterval(update, 1000);
-            //10000ミリ秒ごとにupdateという関数を実行する
-        });
-    }
+            $(function () {
+                timer1  = setInterval(update, 1000);
+                //10000ミリ秒ごとにupdateという関数を実行する
+            });
 
-    function update() {
-        pattern = 'rooms';
-        url = location.href;
-        if (url.indexOf(pattern) != -1) {
-
+        function update() {
+            pattern = 'rooms';
+            url = location.href;
             var form = $('.js-form__text-field');
             var message = form.val();
             var url = location.href;
@@ -43,5 +41,5 @@ $(document).on('turbolinks:load', function () {
                 });
             })
         }
-    }
-});
+    });
+}
