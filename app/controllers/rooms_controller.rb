@@ -17,6 +17,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(buyer_id: current_user.id, micropost_id: params[:micropost_id])
     if @room.save
+      Message.create(room_id: @room.id, from_id: @room.buyer_id, to_id: @room.micropost.user.id, content: "購入します。よろしくお願いします。")
       flash[:success] = "商品を購入しました！"
       redirect_to rooms_url
     else

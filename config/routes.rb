@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   # favorites
   resources :favorites,           only: [:index, :create, :destroy]
+  post '/favorites/:id', to: 'favorites#destroy'
 
   # rooms
   resources :rooms,               only: [:index, :show, :create, :destroy]

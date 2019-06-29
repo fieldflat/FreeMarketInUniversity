@@ -8,9 +8,13 @@
   </p>
   <div style="position: absolute; bottom: 5px; padding-top: 30px;">
     <% if current_user.favorited?(micropost) %>
-    <%= render 'favorites/unfavorited', micropost: micropost %>
+      <div id="fav_<%= micropost.id %>">
+        <%= render 'favorites/unfavorited', micropost: micropost %>
+      </div>
     <% else %>
-    <%= render 'favorites/favorite', micropost: micropost %>
+      <div id="fav_<%= micropost.id %>">
+        <%= render 'favorites/favorite', micropost: micropost %>
+      </div>
     <% end %>
   </div>
 </li>
