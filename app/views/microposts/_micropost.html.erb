@@ -17,4 +17,9 @@
       </div>
     <% end %>
   </div>
+  <div>
+    <% if transaction_now?(micropost.id) %>
+      <span style="color: red;">取引中</span>
+    <% end %>
+  </div>
 </li>
